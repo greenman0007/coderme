@@ -24,10 +24,10 @@
 			  {
 			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			    {
-			    document.getElementById("verifyCodeImage").innerHTML.src="/blog-web/mydemo/getVerifyCodeImage";
+			    document.getElementById("verifyCodeImage").innerHTML.src="./mydemo/getVerifyCodeImage";
 			    }
 			  }
-			xmlhttp.open("GET","/blog-web/mydemo/getVerifyCodeImage",true);
+			xmlhttp.open("GET","./mydemo/getVerifyCodeImage",true);
 			xmlhttp.send();
 		}
 	</script>
@@ -58,7 +58,7 @@
 					    	<tr>
 					    	    <td>验证：</td>
 					    	    <td><input type="text" name="verifyCode"/>&nbsp;&nbsp;  
-                                <img id="verifyCodeImage" onclick="reloadVerifyCode()" src="/blog-web/mydemo/getVerifyCodeImage"/><br/>    </td> 
+                                <img id="verifyCodeImage" onclick="reloadVerifyCode()" src="./mydemo/getVerifyCodeImage"/><br/>    </td> 
 					    	</tr>
 					    	<tr >
 					    		<td ><button type="submit">登陆</button></td>
