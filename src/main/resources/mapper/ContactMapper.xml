@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coderme.mapper.ContactMapper">
+	<resultMap type="contact" id="contactResultMap">  
+        <id property="id" column="ID"/>  
+        <result property="mobileNumber" column="mobile_number" />  
+        <result property="telephoneNumber" column="TELEPHONE_NUMBER" />  
+        <result property="group" column="user_group"/>  
+        <result property="email" column="email"/>  
+        <result property="name" column="contact_name"/>
+    </resultMap>
+     <!-- 插入 -->
+	<insert id="save" parameterType="contact">
+	    <![CDATA[
+		insert into T_CONTACT (contact_name,mobile_number,TELEPHONE_NUMBER,user_group,email) 
+		values (#{name},#{mobileNumber},#{telephoneNumber},#{group},#{email})
+		]]>
+	</insert>
+	
+	<!-- 检索 -->
+	<select id="findAll" resultType="contact" resultMap="contactResultMap">
+		<![CDATA[
+	    select * from T_CONTACT 
+	    ]]>
+	</select>
+	
+	<!-- 检索 -->
+	<select id="findByName" parameterType="java.lang.String" resultType="contact">
+		<![CDATA[
+	    select * from T_CONTACT where contact_name=#{name}
+	    ]]>
+	</select>
+  
+    <!-- 更新 -->
+    <update id="update" parameterType="contact">
+        update T_CONTACT set mobile_number=#{mobileNumber},TELEPHONE_NUMBER=#{telephoneNumber},
+        user_group=#{group},email=#{email} where contact_name=#{name}
+    </update>
+</mapper>

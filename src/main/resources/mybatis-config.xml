@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 基础设置 -->
+	<settings>
+		<!-- changes from the defaults (default true)-->
+		<setting name="lazyLoadingEnabled" value="true" />
+	</settings>
+	<typeAliases>
+	    <typeAlias alias="user" type="com.coderme.bean.User" />
+	    <typeAlias alias="contact" type="com.coderme.bean.Contact" />
+	</typeAliases>
+	<!-- SQL映射文件-->
+	<mappers>
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/ContactMapper.xml" />
+	</mappers> 
+</configuration>  
