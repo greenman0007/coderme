@@ -11,8 +11,8 @@
 <!-- end #menu -->
 <div id="header">
 	<div id="logo">
-		<h1><a href="#">Rain on Leaves</a></h1>
-		<p>Template Design by CSS Template</p>
+		<h1><a href="#">我的博客</a></h1>
+		<p>java,spring,shiro,ibatis</p>
 	</div>
 </div>
 <!-- end #header -->

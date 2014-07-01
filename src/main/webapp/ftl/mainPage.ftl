@@ -22,19 +22,70 @@
 							KeyWord:<a href="#" class="comments">${article.keyWord?if_exists}</a>
 						</p>
 						<div class="entry">
-							<p>This is <strong>Rain on Leaves </strong>, a free, fully standards-compliant CSS template designed by FreeCssTemplates<a href="http://www.nodethirtythree.com/"></a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.  The picture in this template is from <a href="#">PDPhoto.org</a>. This free template is released under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attributions 2.5</a> license, so you’re pretty much free to do whatever you want with it (even use it commercially) provided you keep the links in the footer intact. Aside from that, have fun with it :)</p></div>
+							<p>This is <strong>Rain on Leaves </strong>,  
+							<br/>
+							request.contextPath:
+							<@shiro.hasRole name="admin">
+						     ${request.contextPath} 
+						     </@shiro.hasRole> 
+						     <br/>
+						     request.getContextPath:
+						     ${request.getContextPath()}</p></div>
 				</div>
 				</#list>
 			</div>
 			<!-- end #content -->
 		    <div id="sidebar">
+		    	<strong>功能</strong>
+		    	<hr/>
 		        <ul>
+		        	<@shiro.authenticated>
 					<li>
-						<h2>用户信息</h2>
-						<p>welclome,${userName?if_exists}</p>
+							<p>
+							          欢迎,<strong>${userName?if_exists}</strong> (by request),<@shiro.principal property=null />(by shiro)
+							    <@shiro.user> 
+								 <a href="./login/logout"> 退出</a>
+								</@shiro.user>
+						    </p>
+					</li>
+					</@shiro.authenticated>
+					<li>
+						<@shiro.notAuthenticated>
+							<a href="./login" style="font-size: 14px;">登陆</a>
+						</@shiro.notAuthenticated>
+					</li>
+					<li>
+						<@shiro.notAuthenticated>
+							<a href="./login" style="font-size: 14px;">注册</a>
+						</@shiro.notAuthenticated>
 					</li>
 				</ul>
-		</div>
+				<br/>
+				<strong>文章分类</strong>
+				<hr/>
+				<ul>
+					<li>
+						<a href="http://blog.coderme.cn/?cat=15" title="查看DB下的所有文章">DB</a>
+						
+					</li>
+					<li>
+						<a href="http://blog.coderme.cn/?cat=9" title="查看JAVA下的所有文章">JAVA</a>
+					</li>
+					<li>
+						<a href="http://blog.coderme.cn/?cat=14" title="查看linux下的所有文章">linux</a>
+					</li>
+					<li>
+						<a href="http://blog.coderme.cn/?cat=10" title="查看WebSite下的所有文章">WebSite</a>
+					</li>
+					<li>
+						<a href="http://blog.coderme.cn/?cat=1" title="查看未分类下的所有文章">未分类</a>
+					</li>
+					<li>
+						<a href="http://blog.coderme.cn/?cat=13" title="查看项目管理下的所有文章">项目管理</a>
+					</li>
+				</ul>
+				
+		    </div>
 	</div>
 </body>
 </html>

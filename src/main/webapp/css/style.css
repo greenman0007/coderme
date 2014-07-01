@@ -48,6 +48,7 @@ a {
 
 a:hover {
 	text-decoration: underline;
+	color: blue;
 }
 
 img.border {
@@ -295,10 +296,10 @@ img.aligncenter {
 	display: block;
 	height: 45px;
 	margin: 0px;
-	padding: 10px 0px 0px 20px;
+	padding: 10px 0px 0px 0px;
 	background: url(../images/img03.jpg) repeat-x left top;
 	letter-spacing: -1px;
-	font-size: 28px;
+	font-size: 14px;
 	color: #FFFFFF;
 }
 

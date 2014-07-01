@@ -119,6 +119,26 @@ public class LoginAction {
         return resultPageURL;  
 	}
 	
+	@RequestMapping(value="/logout",method = RequestMethod.GET)
+	public String logout(Model model) {
+		//获取当前的Subject  
+        Subject currentUser = SecurityUtils.getSubject();
+        currentUser.logout();
+
+        List<Article> texts = new ArrayList<Article>();
+		try {
+			texts = articleService.findAllArticle();
+		} catch (Exception e) {
+			model.addAttribute("errorMsg", e.getMessage());
+		}
+		System.out.println(texts);
+		
+		model.addAttribute("textList", texts);
+		return "mainPage";
+	}
+	
+	
+	
 	@RequestMapping(value="/void" ,method = RequestMethod.POST)
 	public String login(Model model, @ModelAttribute User user, HttpServletResponse response) {
 		User user1 = userService.findByName(user.getUserName());

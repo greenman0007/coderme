@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import com.jagregory.shiro.freemarker.ShiroTags;
+import com.coderme.core.shiro.freemarkertags.ShiroTags;
 
 import freemarker.template.TemplateException;
 

@@ -40,7 +40,7 @@
 			<div id="content">
 			    <#if msg?exists>
 				  		<div class="alert">
-						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <button type="button" data-dismiss="alert">&times;</button>
 						  <strong>Warning!</strong> ${msg}.
 						</div>
 				</#if>
