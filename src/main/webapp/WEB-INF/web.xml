@@ -43,7 +43,8 @@
 	</filter-mapping>
 	  
 	<!-- 实例化Spring容器 -->  
-    <!-- 应用启动时,该监听器被执行,它会读取Spring相关配置文件,其默认会到WEB-INF中查找applicationContext.xml --> 
+    <!-- 应用启动时,该监听器被执行,它会读取Spring相关配置文件,其默认会到WEB-INF中查找applicationContext.xml
+       org.springframework.web.context.ContextLoaderListener --> 
     <listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>

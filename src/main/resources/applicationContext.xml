@@ -53,13 +53,14 @@
 		</property>
 	</bean>
 
-	<!-- 属性配置 -->
 
+    <!-- 自定义jdbc.properties的位置 -->
+	<bean id="dataConfigurer" class="com.coderme.core.jdbc.JdbcConfig"/>
+	<!-- 属性配置 -->
     <bean id="propertyConfigurer"
-       class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-       p:location="classpath:jdbc.properties" />
-    <!--使用子类代替 org.springframework.jdbc.datasource.DriverManagerDataSource -->
-	<bean id="dataSource" class="com.coderme.core.jdbc.CodermeDriverManager" >  
+       class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" depends-on="dataConfigurer"/>
+    <!--    p:location="classpath:jdbc.properties" /> -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >  
         <!-- Connection Info -->
         <property name="driverClassName" value="${jdbc.driver}" />  
         <property name="url" value="${jdbc.url}" />  

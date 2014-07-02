@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.stereotype.Service;
 
 /**
  * <pre>
@@ -29,6 +30,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
  * 评审人 ：
  * </pre>
  */
+@Service("dataSource")
 public class CodermeDriverManager extends DriverManagerDataSource {
 
 	@Override
